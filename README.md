@@ -98,18 +98,22 @@ Required in your submission CSV. Not necessarily needed in the training set, but
 
 ## :mag: Explotary Data Analysis (EDA)
 🔹 Histogram of Fare Amount:
+
  <img width="863" height="552" alt="Fare Amount Distribution 100" src="https://github.com/user-attachments/assets/d40ab1f6-702c-4881-bfdb-b43388044566" />
 
 
 🔹 Bar Plot of Passenger Counts:
+
  <img width="567" height="455" alt="Passenger Counts Distribution" src="https://github.com/user-attachments/assets/5ad0f045-71d4-44db-b86f-56777c0d583c" />
 
  
 🔹 Line Plot of Fare Amount over Time:
+
 <img width="576" height="476" alt="Fare Amount Over Time" src="https://github.com/user-attachments/assets/6e241e0f-ff69-4fa8-a332-fe7cc13cf6ab" />
 
  
 🔹 Correlation Matrix showing that there is a strong positive correlation between `distance_km` and target column `fare_amount`:
+
 <img width="1156" height="1212" alt="Correlation Matrix" src="https://github.com/user-attachments/assets/8dae4387-d74c-4f38-987f-b38a5bbe0f57" />
  
 🔹 Others include Histogram of each of the other columns and Box Plot of each column for outliers check.
@@ -195,6 +199,7 @@ Required in your submission CSV. Not necessarily needed in the training set, but
 
 ## 📊 Feature Importance
 The chart below displays the ranked contribution of each feature to predicting `fare_amount`, with `distance_km` being the most influential.
+
 <img width="593" height="855" alt="Feature Importance" src="https://github.com/user-attachments/assets/ea933181-d4b3-494f-b437-9d8843ed2a17" />
 
 
@@ -222,4 +227,5 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
