@@ -204,6 +204,18 @@ The chart below displays the ranked contribution of each feature to predicting `
 
 <img width="593" height="855" alt="Feature Importance" src="https://github.com/user-attachments/assets/ea933181-d4b3-494f-b437-9d8843ed2a17" />
 
+---
+
+## Pipelines
+### 🧠 Pipeline Flow Overview
+```mermaid
+flowchart TD
+    A[Raw Data (train.csv / test.csv)] --> B[data_pipe.py]
+    B -->|Training| C[retraining_pipe.py]
+    B -->|Inference| D[inference_pred.py]
+    C --> E[Updated Model.pkl]
+    D --> F[Predictions.csv]
+    E --> D
 
 ---
 
@@ -229,3 +241,4 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
