@@ -215,15 +215,14 @@ The project is modularized into **three main pipelines**, ensuring reproducibili
 | **`retraining_pipe.py`** | Automates **model retraining** with new data. | - Runs `preprocess_data_retrain()` to clean & enrich raw data.<br>- Loads previously saved model and metadata (`ref_column`, `target`).<br>- Retrains on new + existing data.<br>- Saves the updated model version to `models/`. |
 | **`inference_pred.py`** | Performs **real-time predictions** on unseen test data. | - Calls `preprocess_data_predict()`.<br>- Ensures feature alignment with training columns.<br>- Loads the trained model and predicts `fare_amount`.<br>- Saves final predictions (`key`, `fare_amount`) to `data/processed/predictions.csv`. |
 
----
-
+### 🧠 Pipeline Flow Overview
 ```mermaid
 flowchart TD
-    A[Raw Data (train.csv / test.csv)] --> B[data_pipe.py 🧪]
-    B -->|Training| C[retraining_pipe.py 🔧]
-    B -->|Inference| D[inference_pred.py ⚡]
-    C --> E[Updated Model.pkl 💾]
-    D --> F[Predictions.csv 📄]
+    A["Raw Data (train.csv & test.csv)"] --> B["data_pipe.py"]
+    B -->|Training| C["retraining_pipe.py"]
+    B -->|Inference| D["inference_pred.py"]
+    C --> E["Updated model.pkl"]
+    D --> F["Predictions.csv"]
     E --> D
 ```
 
@@ -251,8 +250,5 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
-
-
-
 
 
