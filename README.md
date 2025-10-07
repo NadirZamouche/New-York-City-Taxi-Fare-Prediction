@@ -195,7 +195,7 @@ Required in your submission CSV. Not necessarily needed in the training set, but
 | **MAE** | 1.4157   | 1.4035  |
 | **R²**  | 0.9005   | 0.9022  |
 
--> This means that the model has a `fare_amount` error of only **$1.4**
+✅ The model demonstrates **excellent generalization**, achieving a mean absolute error (MAE) of just **$1.4** between predicted and actual fare amounts.
 
 ---
 
@@ -206,7 +206,7 @@ The chart below displays the ranked contribution of each feature to predicting `
 
 ---
 
-## 🧩 Pipelines
+## ⚙️ Pipelines
 The project is modularized into **three main pipelines**, ensuring reproducibility, scalability, and clear separation of concerns between data preprocessing, model retraining, and inference.  
 
 | Pipeline | Description | Key Operations |
@@ -215,7 +215,7 @@ The project is modularized into **three main pipelines**, ensuring reproducibili
 | **`retraining_pipe.py`** | Automates **model retraining** with new data. | - Runs `preprocess_data_retrain()` to clean & enrich raw data.<br>- Loads previously saved model and metadata (`ref_column`, `target`).<br>- Retrains on new + existing data.<br>- Saves the updated model version to `models/`. |
 | **`inference_pred.py`** | Performs **real-time predictions** on unseen test data. | - Calls `preprocess_data_predict()`.<br>- Ensures feature alignment with training columns.<br>- Loads the trained model and predicts `fare_amount`.<br>- Saves final predictions (`key`, `fare_amount`) to `data/processed/predictions.csv`. |
 
-### 🧠 Pipeline Flow Overview
+### 🔄 Pipeline Flow Overview
 ```mermaid
 flowchart TD
     A["Raw Data (train.csv & test.csv)"] --> B["data_pipe.py"]
@@ -250,5 +250,6 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
 
