@@ -250,3 +250,11 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+```
+
+---
+## 👨‍💻 Author
+**Nadir Zamouche**  
+
+---
+⭐ If you found this project interesting, consider giving it a star!
