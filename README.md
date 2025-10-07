@@ -55,7 +55,7 @@ Required in your submission CSV. Not necessarily needed in the training set, but
 
 ---
 
-## ⚙️ Feature Engineering
+## 💡 Feature Engineering
 - Extracted time-based features from `pickup_datetime_nyc`:  
    - `year` — Year of the trip.
    - `month` — Month of the trip.
