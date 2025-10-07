@@ -217,7 +217,17 @@ The project is modularized into **three main pipelines**, ensuring reproducibili
 
 ---
 
+### 🧠 Pipeline Flow Overview
 
+**Data Flow:**
+📁 `train.csv` / `test.csv`  
+↓  
+🧪 `data_pipe.py` — Preprocessing  
+→ 🔧 `retraining_pipe.py` (Training → updates `model.pkl`)  
+→ ⚡ `inference_pred.py` (Inference → creates `predictions.csv`)  
+
+💾 `model.pkl` ⟷ ⚡ `inference_pred.py`  
+📄 `predictions.csv` ← ⚡ Inference Output
 
 ---
 
@@ -243,6 +253,7 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
 
 
