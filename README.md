@@ -206,7 +206,7 @@ The chart below displays the ranked contribution of each feature to predicting `
 
 ---
 
-## Pipelines
+## 🧩 Pipelines
 The project is modularized into **three main pipelines**, ensuring reproducibility, scalability, and clear separation of concerns between data preprocessing, model retraining, and inference.  
 
 | Pipeline | Description | Key Operations |
@@ -220,11 +220,11 @@ The project is modularized into **three main pipelines**, ensuring reproducibili
 ### 🧠 Pipeline Flow Overview
 ```mermaid
 flowchart TD
-    A[Raw Data (train.csv / test.csv)] --> B[data_pipe.py]
-    B -->|Training| C[retraining_pipe.py]
-    B -->|Inference| D[inference_pred.py]
-    C --> E[Updated Model.pkl]
-    D --> F[Predictions.csv]
+    A[Raw Data (train.csv / test.csv)] --> B[data_pipe.py 🧪]
+    B -->|Training| C[retraining_pipe.py 🔧]
+    B -->|Inference| D[inference_pred.py ⚡]
+    C --> E[Updated Model.pkl 💾]
+    D --> F[Predictions.csv 📄]
     E --> D
 ```
 
@@ -252,5 +252,6 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
 
