@@ -195,7 +195,7 @@ Required in your submission CSV. Not necessarily needed in the training set, but
 | **MAE** | 1.4157   | 1.4035  |
 | **R²**  | 0.9005   | 0.9022  |
 
--> This means that the model has an error of only **$1.4**.
+-> This means that the model has a `fare_amount` error of only **$1.4**
 
 ---
 
@@ -229,6 +229,3 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
-
-
-
