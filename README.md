@@ -207,6 +207,16 @@ The chart below displays the ranked contribution of each feature to predicting `
 ---
 
 ## Pipelines
+The project is modularized into **three main pipelines**, ensuring reproducibility, scalability, and clear separation of concerns between data preprocessing, model retraining, and inference.  
+
+| Pipeline | Description | Key Operations |
+|-----------|--------------|----------------|
+| 🧼 **`data_pipe.py`** | Handles **data preprocessing** for both training and inference. | - Cleans missing/outlier values.<br>- Extracts **temporal**, **holiday**, and **distance** features.<br>- Converts datetimes to **New York local time**.<br>- Returns preprocessed DataFrame ready for training or prediction. |
+| 🔁 **`retraining_pipe.py`** | Automates **model retraining** with new data. | - Runs `preprocess_data_retrain()` to clean & enrich raw data.<br>- Loads previously saved model and metadata (`ref_column`, `target`).<br>- Retrains on new + existing data.<br>- Saves the updated model version to `models/`. |
+| 🔮 **`inference_pred.py`** | Performs **real-time predictions** on unseen test data. | - Calls `preprocess_data_predict()`.<br>- Ensures feature alignment with training columns.<br>- Loads the trained model and predicts `fare_amount`.<br>- Saves final predictions (`key`, `fare_amount`) to `data/processed/predictions.csv`. |
+
+---
+
 ### 🧠 Pipeline Flow Overview
 ```mermaid
 flowchart TD
@@ -216,6 +226,7 @@ flowchart TD
     C --> E[Updated Model.pkl]
     D --> F[Predictions.csv]
     E --> D
+```
 
 ---
 
@@ -241,4 +252,5 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
