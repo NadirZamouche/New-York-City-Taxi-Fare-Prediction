@@ -217,6 +217,17 @@ The project is modularized into **three main pipelines**, ensuring reproducibili
 
 ---
 
+```mermaid
+flowchart TD
+    A[Raw Data (train.csv / test.csv)] --> B[data_pipe.py 🧪]
+    B -->|Training| C[retraining_pipe.py 🔧]
+    B -->|Inference| D[inference_pred.py ⚡]
+    C --> E[Updated Model.pkl 💾]
+    D --> F[Predictions.csv 📄]
+    E --> D
+```
+
+
 ### 🧠 Pipeline Flow Overview
 
 **Data Flow:**
@@ -253,6 +264,7 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
+
 
 
 
