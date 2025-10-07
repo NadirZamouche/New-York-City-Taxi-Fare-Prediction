@@ -227,19 +227,6 @@ flowchart TD
     E --> D
 ```
 
-
-### 🧠 Pipeline Flow Overview
-
-**Data Flow:**
-📁 `train.csv` / `test.csv`  
-↓  
-🧪 `data_pipe.py` — Preprocessing  
-→ 🔧 `retraining_pipe.py` (Training → updates `model.pkl`)  
-→ ⚡ `inference_pred.py` (Inference → creates `predictions.csv`)  
-
-💾 `model.pkl` ⟷ ⚡ `inference_pred.py`  
-📄 `predictions.csv` ← ⚡ Inference Output
-
 ---
 
 ## 📂 Repository Structure  
@@ -264,7 +251,6 @@ project_structure/
 │
 ├── libraries           # Common imports
 └── README.md
-
 
 
 
